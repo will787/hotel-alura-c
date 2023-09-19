@@ -23,4 +23,13 @@ public class Reserva {
         this.valor = valor;
         this.formaPagamento = formaPagamento;
     }
+    public Integer getId() {return id;}
+    public void setId(Integer id) {this.id = id;}
+
+    public Date getDataEntrada() {return dataEntrada;}
+
+    public Date getDataSaida() {return dataSaida;}
+
+    public String getValor() {return valor;}
+    public String getFormaPagamento() {return formaPagamento;}
 }

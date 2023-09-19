@@ -22,4 +22,6 @@ public class Hospedes {
         this.idreserva = idreserva;
     }
 
+
+
 }
