@@ -10,10 +10,8 @@ import com.toedter.calendar.JDateChooser;
 
 import controller.HospedesController;
 import controller.ReservasController;
-import jdbc.controller.HospedesController;
-import jdbc.controller.ReservasController;
-import jdbc.modelo.Hospedes;
-import jdbc.modelo.Reserva;
+import MODELO.Hospedes;
+import MODELO.Reserva;
 
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
