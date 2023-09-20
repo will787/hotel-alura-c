@@ -2,7 +2,9 @@ package DAO;
 
 import MODELO.Reserva;
 
+import javax.xml.transform.Result;
 import java.sql.*;
+import java.util.List;
 
 public class ReservaDAO {
 
@@ -28,8 +30,17 @@ public class ReservaDAO {
                         }
                     }
                 }
-            } catch (SQLException e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
+            }
+    }
+    private void transformarResultSetEmReserva(List<Reserva> reservas, PreparedStatement pstm) throws SQLException{
+        try(ResultSet rst = pstm.getGeneratedKeys()) {
+            while(rst.next()){
+                Reserva reserva = new Reserva(rst.getInt(1), rst.getDate(2), rst.getDate(3), rst.getString(4), rst.getString(5));
+
+                reservas.add(reserva);
+            }
         }
     }
 }
