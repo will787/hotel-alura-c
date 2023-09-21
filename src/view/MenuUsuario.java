@@ -124,12 +124,6 @@ public class MenuUsuario extends JFrame {
             public void mouseExited(MouseEvent e) {
                 btnBuscar.setBackground(new Color(12, 138, 199));
             }
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                Busca busca = new Busca();
-                busca.setVisible(true);
-                dispose();
-            }
         });
         btnBuscar.setBounds(0, 312, 257, 56);
         btnBuscar.setBackground(new Color(12, 138, 199));

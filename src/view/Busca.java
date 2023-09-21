@@ -1,5 +1,6 @@
-package views;
+package view;
 
+import view.MenuUsuario;
 import controller.HospedesController;
 import controller.ReservasController;
 import controller.HospedesController;
