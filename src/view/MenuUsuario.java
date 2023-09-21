@@ -1,4 +1,5 @@
 package view;
+import controller.ReservasController;
 
 import java.awt.EventQueue;
 import javax.swing.JFrame;

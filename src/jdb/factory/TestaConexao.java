@@ -9,9 +9,21 @@ public class TestaConexao {
         ConnectionFactory connectionFactory = new ConnectionFactory();
         Connection connection = connectionFactory.recuperarConexao();
 
-        System.out.println("Fechando conexão !!!");
+        try (Connection connection1 = connectionFactory.recuperarConexao()) {
+            // Verificar se a conexão foi bem-sucedida
+            if (!connection.isClosed()) {
+                System.out.println("Conexão com o banco de dados bem-sucedida.");
 
-        connection.close();
+                // Execute uma consulta de teste aqui, se necessário.
+                // Por exemplo:
+                // PreparedStatement statement = connection.prepareStatement("SELECT 1");
+                // ResultSet resultSet = statement.executeQuery();
+                // ...
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.err.println("Erro ao conectar ao banco de dados.");
+        }
     }
 
 }
