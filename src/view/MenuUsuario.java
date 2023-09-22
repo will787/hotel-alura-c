@@ -22,10 +22,8 @@ import javax.swing.JSeparator;
 @SuppressWarnings("serial")
 public class MenuUsuario extends JFrame {
 
-    private JPanel contentPane;
     int xMouse, yMouse;
     private JLabel labelExit;
-    private JLabel labelRegistro;
 
     /**
      * Launch the application.
@@ -50,7 +48,7 @@ public class MenuUsuario extends JFrame {
         setIconImage(Toolkit.getDefaultToolkit().getImage(MenuUsuario.class.getResource("/imagenes/aH-40px.png")));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 944, 609);
-        contentPane = new JPanel();
+        JPanel contentPane = new JPanel();
         contentPane.setBackground(Color.WHITE);
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
@@ -107,7 +105,7 @@ public class MenuUsuario extends JFrame {
         btnRegistro.setLayout(null);
         btnRegistro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        labelRegistro = new JLabel("Registro de reservas");
+        JLabel labelRegistro = new JLabel("Registro de reservas");
         labelRegistro.setIcon(new ImageIcon(MenuUsuario.class.getResource("/imagenes/reservado.png")));
         labelRegistro.setForeground(SystemColor.text);
         labelRegistro.setBounds(25, 11, 205, 34);

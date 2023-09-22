@@ -9,21 +9,21 @@ public class Hospedes {
     private Date dataNascimento;
     private String nacionalidade;
     private String telefone;
-    private Integer idReserva;
+    private Integer idreserva;
 
     public Hospedes(String nome, String sobrenome, Date dataNascimento, String nacionalidade, String telefone,
-                    Integer idReserva) {
+                    Integer idreserva) {
         super();
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.dataNascimento = dataNascimento;
         this.nacionalidade = nacionalidade;
         this.telefone = telefone;
-        this.idReserva = idReserva;
+        this.idreserva = idreserva;
     }
 
     public Hospedes(Integer id, String nome, String sobrenome, Date dataNascimento, String nacionalidade,
-                    String telefone, Integer idReserva) {
+                    String telefone, Integer idreserva) {
         super();
         Id = id;
         this.nome = nome;
@@ -31,7 +31,7 @@ public class Hospedes {
         this.dataNascimento = dataNascimento;
         this.nacionalidade = nacionalidade;
         this.telefone = telefone;
-        this.idReserva = idReserva;
+        this.idreserva = idreserva;
     }
 
 
@@ -85,11 +85,11 @@ public class Hospedes {
     }
 
     public Integer getIdReserva() {
-        return idReserva;
+        return idreserva;
     }
 
-    public void setIdReserva(Integer idReserva) {
-        this.idReserva = idReserva;
+    public void setIdReserva(Integer idreserva) {
+        this.idreserva = idreserva;
     }
 
 }

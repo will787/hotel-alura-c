@@ -1,5 +1,10 @@
 package view;
 
+import controller.HospedesController;
+import controller.ReservasController;
+import MODELO.Hospedes;
+import MODELO.Reserva;
+
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -7,11 +12,6 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
 import java.awt.Color;
 import com.toedter.calendar.JDateChooser;
-
-import controller.HospedesController;
-import controller.ReservasController;
-import MODELO.Hospedes;
-import MODELO.Reserva;
 
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;

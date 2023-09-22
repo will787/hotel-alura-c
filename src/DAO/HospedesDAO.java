@@ -5,18 +5,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 import MODELO.Hospedes;
+import controller.ReservasController;
 
 
 public class HospedesDAO {
     private Connection connection;
-
+    private ReservasController reservasController;
     public HospedesDAO(Connection connection) {
         this.connection = connection;
+        this.reservasController = new ReservasController();
     }
 
-    public void salvar(Hospedes hospedes) {
+    public void salvar(Hospedes hospedes) throws RuntimeException {
         try {
-            String sql = "INSERT INTO hospedes (nome, sobrenome, data_nascimento, nacionalidade, telefone, idReserva) VALUES (?, ?, ?, ?,?,?)";
+            String sql = "INSERT INTO hospedes (nome, sobrenome, data_nascimento, nacionalidade, telefone, idreserva) VALUES (?, ?, ?, ?, ?, ?)";
 
             try (PreparedStatement pstm = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
@@ -42,7 +44,7 @@ public class HospedesDAO {
     public List<Hospedes> listarHospedes() {
         List<Hospedes> hospedes = new ArrayList<>();
         try {
-            String sql = "SELECT id, nome, sobrenome, data_nascimento, nacionalidade, telefone, idReserva FROM hospedes";
+            String sql = "SELECT id, nome, sobrenome, data_nascimento, nacionalidade, telefone, idreserva FROM hospedes";
 
             try (PreparedStatement pstm = connection.prepareStatement(sql)) {
                 pstm.execute();
@@ -59,7 +61,7 @@ public class HospedesDAO {
         List<Hospedes> hospedes = new ArrayList<Hospedes>();
         try {
 
-            String sql = "SELECT id, nome, sobrenome, data_nascimento, nacionalidade, telefone, idReserva FROM hospedes WHERE id = ?";
+            String sql = "SELECT id, nome, sobrenome, data_nascimento, nacionalidade, telefone, idreserva FROM hospedes WHERE id = ?";
 
             try (PreparedStatement pstm = connection.prepareStatement(sql)) {
                 pstm.setString(1, id);
@@ -75,7 +77,7 @@ public class HospedesDAO {
 
     public void atualizar(String nome, String sobrenome, Date dataNascimento, String nacionalidade, String telefone, Integer idReserva, Integer id) {
         try (PreparedStatement stm = connection
-                .prepareStatement("UPDATE hospedes SET nome = ?, sobrenome = ?, data_nascimento = ?, nacionalidade = ?, telefone = ?, idReserva = ? WHERE id = ?")) {
+                .prepareStatement("UPDATE hospedes SET nome = ?, sobrenome = ?, data_nascimento = ?, nacionalidade = ?, telefone = ?, idreserva = ? WHERE id = ?")) {
             stm.setString(1, nome);
             stm.setString(2, sobrenome);
             stm.setDate(3, dataNascimento);
@@ -106,7 +108,5 @@ public class HospedesDAO {
             }
         }
     }
-
-
 
 }

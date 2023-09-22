@@ -9,11 +9,15 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import MODELO.Reserva;
+import controller.HospedesController;
+import controller.ReservasController;
 
 public class ReservaDAO {
 
     private Connection connection;
 
+    private HospedesController hospedesController;
+    private ReservasController reservasController;
     public ReservaDAO(Connection connection) {
         this.connection = connection;
     }
